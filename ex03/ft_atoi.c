@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 10:00:05 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/12/03 10:59:52 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/03 11:08:13 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	init_variables(int *signal, unsigned int *result, int *i)
 
 int		ft_isspace(char c)
 {
-	return (c == ' ' && c == '\t' && c == '\n'
-			&& c == '\v' && c == '\f' && c == '\r');
+	return (c == ' ' || c == '\t' || c == '\n'
+			|| c == '\v' || c == '\f' || c == '\r');
 }
 
 int		ft_isnumeric(char c)
