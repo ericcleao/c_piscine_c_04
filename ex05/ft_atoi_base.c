@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 11:48:28 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/12/04 15:21:27 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/10 14:44:48 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_get_base_lenght(char *base)
 				return (-1);
 			j++;
 		}
-		if (base[i] == ' ' || base[i] == '+' || base[i] == '-')
+		if (ft_isspace(base[i]) || base[i] == '+' || base[i] == '-')
 			return (-1);
 		i++;
 	}
