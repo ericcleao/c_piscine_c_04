@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 10:00:05 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/12/03 11:08:13 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/10 14:14:09 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,20 @@ int		ft_atoi(char *str)
 	int				i;
 	int				signal;
 	unsigned int	result;
-	unsigned int	aux;
 
 	init_variables(&signal, &result, &i);
+	while (ft_isspace(str[i]))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			signal *= -1;
+		i++;
+	}
 	while (str[i] != '\0')
 	{
-		aux = result;
-		while (ft_isspace(str[i]))
-			i++;
-		while (str[i] == '+' || str[i] == '-')
-		{
-			if (str[i] == '-')
-				signal *= -1;
-			i++;
-		}
 		if (update_result(&result, str[i]) == 0)
 			return (signal * result);
-		if (aux > result)
-			return (0);
 		i++;
 	}
 	return (signal * result);
